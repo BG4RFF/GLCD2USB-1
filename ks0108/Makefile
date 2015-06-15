@@ -12,7 +12,7 @@
 # change the following line to atmega32 to use that cpu
 MCU=atmega16
 DEFINES += -DF_CPU=16000000
-COMPILE = avr-gcc -Wall -O2 -fno-strict-aliasing -Iusbdrv -I. -mmcu=$(MCU) $(DEFINES)
+COMPILE = avr-gcc -Wall -Wno-deprecated-declarations -O2 -D__PROG_TYPES_COMPAT__ -fno-strict-aliasing -Iusbdrv -I. -mmcu=$(MCU) $(DEFINES)
 
 OBJECTS = usbdrv/usbdrv.o usbdrv/usbdrvasm.o usbdrv/oddebug.o main.o ks0108.o glcd.o rprintf.o
 
